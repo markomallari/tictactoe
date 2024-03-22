@@ -26,6 +26,7 @@ const BoxList = ({ boxList, onPlayerSelect, player }) => {
                 selectByPlayer(player, v.boxId);
               }}
             >
+              {}
               <BoxItem player={v.player} />
             </div>
           );
