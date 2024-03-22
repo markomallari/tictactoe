@@ -1,11 +1,26 @@
+For running the app needs to install packages first use the following code in the terminal
+
+### npm install
+
+then once the packages installed you can now run the app using
+
+### npm start
+
+this codes/algorthm is originally made by me Mark Jomel Mallari
+Technical Stacks I used are just pure ReactJS and Tailwind CSS
+
+-ReactJs
+-TailwindCSS
+-React/ReduxToolKit
+-React-Toastify
+
 # Frontend Engineer Assessment - Tic Tac Toe
 
 ![Tic Tac Toe](tic-tac-toe.jpg "Tic Tac Toe")
 
 Build a classic Tic Tac Toe game with the following stack:
 
-- React / React Native (if you are applying for Mobile role please use RN)
-      - Use Create React App (CRA) / Create React Native App (CRNA) as template
+- React / React Native (if you are applying for Mobile role please use RN) - Use Create React App (CRA) / Create React Native App (CRNA) as template
 - Redux (optional)
 - Unit test (optional)
 - Styled-components (optional)
