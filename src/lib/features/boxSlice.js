@@ -3,39 +3,39 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   boxList: [
     {
-      box: "1",
+      boxId: 1,
       player: "",
     },
     {
-      box: "2",
+      boxId: 2,
       player: "",
     },
     {
-      box: "3",
+      boxId: 3,
       player: "",
     },
     {
-      box: "4",
+      boxId: 4,
       player: "",
     },
     {
-      box: "5",
+      boxId: 5,
       player: "",
     },
     {
-      box: "6",
+      boxId: 6,
       player: "",
     },
     {
-      box: "7",
+      boxId: 7,
       player: "",
     },
     {
-      box: "8",
+      boxId: 8,
       player: "",
     },
     {
-      box: "9",
+      boxId: 9,
       player: "",
     },
   ],
@@ -48,10 +48,12 @@ export const boxListSlice = createSlice({
     updateBoxList: (state, action) => {
       state.boxList = action.payload;
     },
+    resetBoxList: (state) => {
+      state.boxList = state.boxList.map((v) => ({ ...v, player: "" }));
+    },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = boxListSlice.actions;
+export const { updateBoxList, resetBoxList } = boxListSlice.actions;
 
 export default boxListSlice.reducer;

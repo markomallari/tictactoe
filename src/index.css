@@ -10,7 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
-  background-color: #042f2e;
+  /* background-color: #042f2e; */
+  background-color: #e0f2fe;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +19,15 @@ body {
 
 .font-cursive {
   font-family: cursive;
+  position: relative;
+}
+
+.box-item-player-1:hover::after {
+  content: "X";
+  opacity: 0.2;
+}
+
+.box-item-player-2:hover::after {
+  content: "O";
+  opacity: 0.2;
 }
