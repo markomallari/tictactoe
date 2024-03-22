@@ -1,10 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import BoxItem from "./BoxItem";
 
-const BoxList = ({ boxList, onPlayerSelect, player }) => {
+const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
   const selectByPlayer = (p, id) => {
     onPlayerSelect(p, id);
   };
+
+  let slashPatternStyle = ``;
+
+  const patternIndex = [0, 1, 2, 3, 4, 5, 6, 7];
+
+  switch (pattern) {
+    case 0:
+      slashPatternStyle = `bg-red-500 absolute row-1-line`;
+      break;
+    case 1:
+      slashPatternStyle = `bg-red-500 absolute row-2-line`;
+      break;
+    case 2:
+      slashPatternStyle = `bg-red-500 absolute row-3-line`;
+      break;
+    case 3:
+      slashPatternStyle = `bg-red-500 absolute col-1-line`;
+      break;
+    case 4:
+      slashPatternStyle = `bg-red-500 absolute col-2-line`;
+      break;
+    case 5:
+      slashPatternStyle = `bg-red-500 absolute col-3-line`;
+      break;
+    case 6:
+      slashPatternStyle = `bg-red-500 absolute slant-2-line`;
+      break;
+    case 7:
+      slashPatternStyle = `bg-red-500 absolute slant-1-line`;
+      break;
+  }
 
   const boxStyle = `flex justify-center items-center bg-white border-black cursor-pointer leading-10 text-[9.25rem] font-cursive`;
 
@@ -108,6 +139,11 @@ const BoxList = ({ boxList, onPlayerSelect, player }) => {
           );
         }
       })}
+      {patternIndex.includes(pattern) ? (
+        <div className={`${slashPatternStyle}`}></div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

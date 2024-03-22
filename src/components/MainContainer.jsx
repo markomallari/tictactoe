@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BoxList from "./BoxList";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -18,6 +18,7 @@ const MainContainer = () => {
   const [player, setPlayer] = useState("X");
   const [boxSelection, setBoxSelection] = useState(boxlist);
   const [settledGame, setSettledGame] = useState(false);
+  const [pattern, setPattern] = useState(null);
 
   const winningPatterns = [
     { s0: 0, s1: 1, s2: 2 },
@@ -47,8 +48,7 @@ const MainContainer = () => {
           setPlayer("X");
         }
         return { ...v, player: p };
-      } else;
-      {
+      } else {
         return v;
       }
     });
@@ -57,8 +57,9 @@ const MainContainer = () => {
     //update store
     dispatch(updateBoxList(newBoxList));
 
+    let draw = true;
     //check winning pattern
-    winningPatterns.map((v) => {
+    winningPatterns.map((v, i) => {
       if (
         (newBoxList[v.s0].player === "X" &&
           newBoxList[v.s1].player === "X" &&
@@ -67,17 +68,19 @@ const MainContainer = () => {
           newBoxList[v.s1].player === "O" &&
           newBoxList[v.s2].player === "O")
       ) {
+        setPattern(i);
+        setSettledGame(true);
+        draw = false;
         toast.success(`Player ${player} Wins!`);
         if (player === "X") {
           dispatch(addScoreX());
         } else {
           dispatch(addScoreY());
         }
-        setSettledGame(true);
       }
     });
 
-    if (!settledGame) {
+    if (draw) {
       const draw = newBoxList.every((v) => v.player !== "");
       if (draw) {
         toast.success(`Game Draw!`);
@@ -106,6 +109,7 @@ const MainContainer = () => {
     newBoxList = newBoxList.map((v) => ({ ...v, player: "" }));
     setBoxSelection(newBoxList);
     setPlayer("X");
+    setPattern(null);
     //reset to initial store
     dispatch(resetBoxList());
   };
@@ -114,12 +118,12 @@ const MainContainer = () => {
     <>
       <ToastContainer autoClose={1000} hideProgressBar={true} />
       <div className="flex flex-row items-center justify-center">
-        <div className="flex flex-col my-2 text-violet-700 border-2 border-violet-700 w-[240px] px-2">
-          <div className="flex flex-row gap-9 my-1">
+        <div className="flex flex-col my-2 text-violet-700 border-2 border-violet-700 w-[320px] px-2 bg-white">
+          <div className="flex flex-row flex-wrap my-1">
             Scoreboard{" "}
             <div>
               <button
-                className="bg-green-500 hover:bg-green-700 text-white font-medium py-1 px-3 rounded"
+                className="bg-green-500 hover:bg-green-700 text-white font-medium ml-[9.7rem] py-1 px-3 rounded"
                 onClick={() => {
                   onClearScores();
                 }}
@@ -132,38 +136,40 @@ const MainContainer = () => {
           <div>O: {scores?.o}</div>
           <div>Draw: {scores?.draw}</div>
         </div>
-        <h1 className="text-center m-6 text-violet-700 text-4xl">
-          Tic-Tac-Toe NCS
-        </h1>
-        <div className="flex flex-row gap-2">
-          {settledGame ? (
-            <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() => {
-                onNewGame();
-              }}
-            >
-              New Game
-            </button>
-          ) : (
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() => {
-                onGameReset();
-                toast.success("Game Resets!");
-              }}
-            >
-              Reset
-            </button>
-          )}
+        <div className="flex flex-col justify-center">
+          <h1 className="text-center mx-8 mt-1 text-violet-700 text-4xl">
+            Tic-Tac-Toe NCS
+          </h1>
+          <div className="flex flex-row gap-2  mx-8 mt-2">
+            {settledGame ? (
+              <button
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() => {
+                  onNewGame();
+                }}
+              >
+                New Game
+              </button>
+            ) : (
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() => {
+                  onGameReset();
+                  toast.success("Game Resets!");
+                }}
+              >
+                Reset
+              </button>
+            )}
+          </div>
         </div>
       </div>
-
       <div className="flex flex-wrap h-[620px] w-[620px] border-1 text-center min-w-[400px] bg-white shadow-2xl">
         <BoxList
           boxList={boxSelection}
           onPlayerSelect={onPlayerSelect}
           player={player}
+          pattern={pattern}
         />
       </div>
     </>

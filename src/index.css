@@ -31,3 +31,54 @@ body {
   content: "O";
   opacity: 0.2;
 }
+
+.row-1-line {
+  width: 440px;
+  height: 0.25rem;
+  top: 34%;
+  left: 31%;
+}
+.row-2-line {
+  width: 440px;
+  height: 0.25rem;
+  top: 57%;
+  left: 31%;
+}
+.row-3-line {
+  width: 440px;
+  height: 0.25rem;
+  top: 81%;
+  left: 31%;
+}
+.col-1-line {
+  width: 0.25rem;
+  height: 440px;
+  top: 30%;
+  left: 34%;
+}
+.col-2-line {
+  width: 0.25rem;
+  height: 440px;
+  top: 30%;
+  left: 49%;
+}
+.col-3-line {
+  width: 0.25rem;
+  height: 440px;
+  top: 30%;
+  left: 64%;
+}
+.slant-1-line {
+  width: 440px;
+  height: 0.25rem;
+  top: 56%;
+  left: 32%;
+  transform: skewY(-45deg);
+}
+.slant-2-line {
+  width: 440px;
+  height: 0.25rem;
+  top: 58%;
+  left: 31%;
+  transform: skewY(45deg);
+}
