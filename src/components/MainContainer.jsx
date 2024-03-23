@@ -119,7 +119,7 @@ const MainContainer = () => {
       <ToastContainer autoClose={1000} hideProgressBar={true} />
       <div className="@container container fixed m-auto min-w-[380px]">
         <div className="flex flex-col items-center justify-center">
-          <div class="grid grid-cols-3 w-full md:w-[620px] my-2">
+          <div className="grid grid-cols-3 w-full md:w-[620px] my-2">
             <div className="flex flex-col bg-white shadow-lg p-2">
               <div className="font-bold">Scoreboard: </div>
               <div className="">
