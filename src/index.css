@@ -12,9 +12,6 @@ body {
   padding: 0;
   /* background-color: #042f2e; */
   background-color: #e0f2fe;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .font-cursive {
@@ -33,68 +30,239 @@ body {
 }
 
 .row-1-line {
-  /*   width: 440px;
+  width: 535px;
   height: 0.25rem;
-  top: 34%;
-  left: 31%; */
-  width: 440px;
-  height: 0.25rem;
-  top: -151%;
-  left: -173%;
+  top: -150%;
+  left: -189%;
 }
+
 .row-2-line {
-  /*   width: 440px;
-  height: 0.25rem;
-  top: 57%;
-  left: 31%; */
-  width: 440px;
+  width: 535px;
   height: 0.25rem;
   top: -51%;
-  left: -173%;
+  left: -189%;
 }
+
 .row-3-line {
-  /*   width: 440px;
-  height: 0.25rem;
-  top: 81%;
-  left: 31%; */
-  width: 440px;
+  width: 535px;
   height: 0.25rem;
   top: 54%;
-  left: -173%;
+  left: -189%;
 }
+
 .col-1-line {
-  /*   width: 0.25rem;
-  height: 440px;
-  top: 30%;
-  left: 34%; */
   width: 0.25rem;
-  height: 440px;
-  top: -171%;
+  height: 535px;
+  top: -191%;
   left: -150%;
 }
+
 .col-2-line {
   width: 0.25rem;
-  height: 440px;
-  top: -171%;
+  height: 535px;
+  top: -191%;
   left: -49%;
 }
+
 .col-3-line {
   width: 0.25rem;
-  height: 440px;
-  top: -171%;
+  height: 535px;
+  top: -191%;
   left: 50%;
 }
+
 .slant-1-line {
-  width: 440px;
+  width: 535px;
   height: 0.25rem;
-  top: -47%;
-  left: -171%;
+  top: -50%;
+  left: -190%;
   transform: skewY(-45deg);
 }
+
 .slant-2-line {
-  width: 440px;
+  width: 535px;
   height: 0.25rem;
-  top: -47%;
-  left: -171%;
+  top: -50%;
+  left: -190%;
   transform: skewY(45deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .row-1-line {
+    width: 430px;
+    height: 0.25rem;
+    top: -150%;
+    left: -177%;
+  }
+
+  .row-2-line {
+    width: 430px;
+    height: 0.25rem;
+    top: -51%;
+    left: -177%;
+  }
+
+  .row-3-line {
+    width: 430px;
+    height: 0.25rem;
+    top: 51%;
+    left: -177%;
+  }
+
+  .col-1-line {
+    width: 0.25rem;
+    height: 430px;
+    top: -172%;
+    left: -152%;
+  }
+
+  .col-2-line {
+    width: 0.25rem;
+    height: 430px;
+    top: -172%;
+    left: -51%;
+  }
+
+  .col-3-line {
+    width: 0.25rem;
+    height: 430px;
+    top: -172%;
+    left: 51%;
+  }
+
+  .slant-1-line {
+    width: 430px;
+    height: 0.25rem;
+    top: -51%;
+    left: -175%;
+    transform: skewY(-45deg);
+  }
+
+  .slant-2-line {
+    width: 430px;
+    height: 0.25rem;
+    top: -51%;
+    left: -175%;
+    transform: skewY(45deg);
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .row-1-line {
+    width: 345px;
+    height: 0.25rem;
+    top: -150%;
+    left: -189%;
+  }
+
+  .row-2-line {
+    width: 345px;
+    height: 0.25rem;
+    top: -51%;
+    left: -189%;
+  }
+
+  .row-3-line {
+    width: 345px;
+    height: 0.25rem;
+    top: 54%;
+    left: -189%;
+  }
+
+  .col-1-line {
+    width: 0.25rem;
+    height: 345px;
+    top: -191%;
+    left: -150%;
+  }
+
+  .col-2-line {
+    width: 0.25rem;
+    height: 345px;
+    top: -191%;
+    left: -49%;
+  }
+
+  .col-3-line {
+    width: 0.25rem;
+    height: 345px;
+    top: -191%;
+    left: 50%;
+  }
+
+  .slant-1-line {
+    width: 345px;
+    height: 0.25rem;
+    top: -50%;
+    left: -190%;
+    transform: skewY(-45deg);
+  }
+
+  .slant-2-line {
+    width: 345px;
+    height: 0.25rem;
+    top: -50%;
+    left: -190%;
+    transform: skewY(45deg);
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .row-1-line {
+    width: 290px;
+    height: 0.25rem;
+    top: -150%;
+    left: -189%;
+  }
+
+  .row-2-line {
+    width: 290px;
+    height: 0.25rem;
+    top: -51%;
+    left: -189%;
+  }
+
+  .row-3-line {
+    width: 290px;
+    height: 0.25rem;
+    top: 54%;
+    left: -189%;
+  }
+
+  .col-1-line {
+    width: 0.25rem;
+    height: 290px;
+    top: -191%;
+    left: -150%;
+  }
+
+  .col-2-line {
+    width: 0.25rem;
+    height: 290px;
+    top: -191%;
+    left: -49%;
+  }
+
+  .col-3-line {
+    width: 0.25rem;
+    height: 290px;
+    top: -191%;
+    left: 50%;
+  }
+
+  .slant-1-line {
+    width: 290px;
+    height: 0.25rem;
+    top: -50%;
+    left: -190%;
+    transform: skewY(-45deg);
+  }
+
+  .slant-2-line {
+    width: 290px;
+    height: 0.25rem;
+    top: -50%;
+    left: -190%;
+    transform: skewY(45deg);
+  }
 }

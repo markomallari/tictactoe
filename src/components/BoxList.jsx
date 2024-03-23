@@ -37,10 +37,10 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
       break;
   }
 
-  const boxStyle = `flex justify-center items-center bg-white border-black cursor-pointer leading-10 text-[9.25rem] font-cursive`;
+  const boxStyle = `flex justify-center items-center bg-white border-black cursor-pointer leading-5 text-[5.25rem] md:leading-10 md:text-[9.25rem] font-cursive aspect-square hover:bg-slate-50`;
 
   return (
-    <div className="grid grid-cols-3 w-full p-10">
+    <div className="grid grid-cols-3">
       {boxList?.map((v) => {
         if (v.boxId == 1 || v.boxId == 2) {
           return (

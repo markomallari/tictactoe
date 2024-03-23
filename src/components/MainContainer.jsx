@@ -117,60 +117,62 @@ const MainContainer = () => {
   return (
     <>
       <ToastContainer autoClose={1000} hideProgressBar={true} />
-      <div className="flex flex-row items-center justify-center">
-        <div className="flex flex-col my-2 text-violet-700 border-2 border-violet-700 w-[320px] px-2 bg-white">
-          <div className="flex flex-row flex-wrap my-1">
-            Scoreboard{" "}
-            <div>
-              <button
-                className="bg-green-500 hover:bg-green-700 text-white font-medium ml-[9.7rem] py-1 px-3 rounded"
-                onClick={() => {
-                  onClearScores();
-                }}
-              >
-                Clear
-              </button>
+      <div className="@container container fixed m-auto min-w-[380px]">
+        <div className="flex flex-col items-center justify-center">
+          <div class="grid grid-cols-3 w-full md:w-[620px] my-2">
+            <div className="flex flex-col bg-white shadow-lg p-2">
+              <div className="font-bold">Scoreboard: </div>
+              <div className="">
+                <button
+                  className="bg-green-500 hover:bg-green-700 text-white font-medium py-1 px-3 rounded"
+                  onClick={() => {
+                    onClearScores();
+                  }}
+                >
+                  Clear Scores
+                </button>
+              </div>
+              <div className="font-medium">X: {scores?.x} points</div>
+              <div className="font-medium">Y: {scores?.o} points</div>
+              <div className="font-medium">Draw: {scores?.draw} points</div>
+            </div>
+            <div className="flex text-center align-middle justify-center items-center">
+              <div className="font-semibold text-2xl"> Tictactoe NCS </div>
+            </div>
+            <div className="flex text-center items-center align-middle justify-center">
+              <div>
+                {settledGame ? (
+                  <button
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => {
+                      onNewGame();
+                    }}
+                  >
+                    New Game
+                  </button>
+                ) : (
+                  <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => {
+                      onGameReset();
+                      toast.success("Game Resets!");
+                    }}
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-          <div>X: {scores?.x}</div>
-          <div>O: {scores?.o}</div>
-          <div>Draw: {scores?.draw}</div>
-        </div>
-        <div className="flex flex-col justify-center">
-          <h1 className="text-center mx-8 mt-1 text-violet-700 text-4xl">
-            Tic-Tac-Toe NCS
-          </h1>
-          <div className="flex flex-row gap-2  mx-8 mt-2">
-            {settledGame ? (
-              <button
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => {
-                  onNewGame();
-                }}
-              >
-                New Game
-              </button>
-            ) : (
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => {
-                  onGameReset();
-                  toast.success("Game Resets!");
-                }}
-              >
-                Reset
-              </button>
-            )}
+          <div className="justify-center items-center w-full md:w-[620px] bg-white shadow-2xl p-8">
+            <BoxList
+              boxList={boxSelection}
+              onPlayerSelect={onPlayerSelect}
+              player={player}
+              pattern={pattern}
+            />
           </div>
         </div>
-      </div>
-      <div className="flex flex-wrap h-[620px] w-[620px] border-1 text-center min-w-[400px] bg-white shadow-2xl">
-        <BoxList
-          boxList={boxSelection}
-          onPlayerSelect={onPlayerSelect}
-          player={player}
-          pattern={pattern}
-        />
       </div>
     </>
   );
