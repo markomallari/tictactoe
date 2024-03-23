@@ -135,15 +135,15 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
               }}
             >
               <BoxItem player={v.player} />
+              {patternIndex.includes(pattern) ? (
+                <div className={`${slashPatternStyle}`}></div>
+              ) : (
+                ""
+              )}
             </div>
           );
         }
       })}
-      {patternIndex.includes(pattern) ? (
-        <div className={`${slashPatternStyle}`}></div>
-      ) : (
-        ""
-      )}
     </div>
   );
 };

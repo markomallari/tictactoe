@@ -33,52 +33,68 @@ body {
 }
 
 .row-1-line {
-  width: 440px;
+  /*   width: 440px;
   height: 0.25rem;
   top: 34%;
-  left: 31%;
+  left: 31%; */
+  width: 440px;
+  height: 0.25rem;
+  top: -151%;
+  left: -173%;
 }
 .row-2-line {
-  width: 440px;
+  /*   width: 440px;
   height: 0.25rem;
   top: 57%;
-  left: 31%;
-}
-.row-3-line {
+  left: 31%; */
   width: 440px;
   height: 0.25rem;
+  top: -51%;
+  left: -173%;
+}
+.row-3-line {
+  /*   width: 440px;
+  height: 0.25rem;
   top: 81%;
-  left: 31%;
+  left: 31%; */
+  width: 440px;
+  height: 0.25rem;
+  top: 54%;
+  left: -173%;
 }
 .col-1-line {
-  width: 0.25rem;
+  /*   width: 0.25rem;
   height: 440px;
   top: 30%;
-  left: 34%;
+  left: 34%; */
+  width: 0.25rem;
+  height: 440px;
+  top: -171%;
+  left: -150%;
 }
 .col-2-line {
   width: 0.25rem;
   height: 440px;
-  top: 30%;
-  left: 49%;
+  top: -171%;
+  left: -49%;
 }
 .col-3-line {
   width: 0.25rem;
   height: 440px;
-  top: 30%;
-  left: 64%;
+  top: -171%;
+  left: 50%;
 }
 .slant-1-line {
   width: 440px;
   height: 0.25rem;
-  top: 56%;
-  left: 32%;
+  top: -47%;
+  left: -171%;
   transform: skewY(-45deg);
 }
 .slant-2-line {
   width: 440px;
   height: 0.25rem;
-  top: 58%;
-  left: 31%;
+  top: -47%;
+  left: -171%;
   transform: skewY(45deg);
 }
