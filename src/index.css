@@ -39,14 +39,14 @@ body {
 .row-2-line {
   width: 535px;
   height: 0.25rem;
-  top: -51%;
+  top: -50%;
   left: -196%;
 }
 
 .row-3-line {
   width: 535px;
   height: 0.25rem;
-  top: 53%;
+  top: 52%;
   left: -196%;
 }
 
@@ -61,29 +61,29 @@ body {
   width: 0.25rem;
   height: 535px;
   top: -191%;
-  left: -49%;
+  left: -51%;
 }
 
 .col-3-line {
   width: 0.25rem;
   height: 535px;
   top: -191%;
-  left: 50%;
+  left: 51%;
 }
 
 .slant-1-line {
-  width: 535px;
+  width: 500px;
   height: 0.25rem;
   top: -50%;
-  left: -190%;
+  left: -186%;
   transform: skewY(-45deg);
 }
 
 .slant-2-line {
-  width: 535px;
+  width: 500px;
   height: 0.25rem;
   top: -50%;
-  left: -190%;
+  left: -186%;
   transform: skewY(45deg);
 }
 

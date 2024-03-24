@@ -99,6 +99,7 @@ const MainContainer = () => {
   //on game resets
   const onClearScores = () => {
     dispatch(clearScore());
+    toast.success(`Scoreboard Clear!`);
     onGameReset();
     setSettledGame(false);
   };
@@ -132,12 +133,24 @@ const MainContainer = () => {
                   Clear Scores
                 </button>
               </div>
-              <div className="font-medium">X: {scores?.x} points</div>
-              <div className="font-medium">Y: {scores?.o} points</div>
-              <div className="font-medium">Draw: {scores?.draw} points</div>
+              <div className="font-medium">
+                X: {scores?.x}{" "}
+                {scores.x > 1 ? "points" : scores.x === 1 ? "point" : ""}
+              </div>
+              <div className="font-medium">
+                Y: {scores?.o}{" "}
+                {scores.o > 1 ? "points" : scores.o === 1 ? "point" : ""}
+              </div>
+              <div className="font-medium">
+                Draw: {scores?.draw}{" "}
+                {scores.draw > 1 ? "points" : scores.draw === 1 ? "point" : ""}
+              </div>
             </div>
             <div className="flex text-center align-middle justify-center items-center">
-              <div className="font-semibold text-2xl"> Tictactoe NCS </div>
+              <div className="font-semibold text-2xl text-violet-700">
+                {" "}
+                Tictactoe NCS{" "}
+              </div>
             </div>
             <div className="flex text-center items-center align-middle justify-center">
               <div>
