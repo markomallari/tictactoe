@@ -14,8 +14,6 @@ Technical Stacks I used are just pure ReactJS and Tailwind CSS
 -React/ReduxToolKit
 -React-Toastify
 
-# Frontend Engineer Assessment - Tic Tac Toe
-
 # Example Initial Page
 
 ![Tic Tac Toe](sample/tictactoe_sample.png "Tic Tac Toe")
@@ -33,7 +31,9 @@ sample winning patterns
 ![Tic Tac Toe](sample/tictactoe_game_reset.png "Tic Tac Toe")
 ![Tic Tac Toe](sample/tictactoe_score_clearing.png "Tic Tac Toe")
 
----
+# ---------------------------------------------
+
+# Frontend Engineer Assessment - Tic Tac Toe
 
 ![Tic Tac Toe](tic-tac-toe.jpg "Tic Tac Toe")
 
