@@ -16,6 +16,25 @@ Technical Stacks I used are just pure ReactJS and Tailwind CSS
 
 # Frontend Engineer Assessment - Tic Tac Toe
 
+# Example Initial Page
+
+![Tic Tac Toe](sample/tictactoe_sample.png "Tic Tac Toe")
+
+# Game Mechanics
+
+first player who can plot 3 slot with pattern wins
+sample winning patterns
+![Tic Tac Toe](sample/tictactoe_winning_pattern_1.png "Tic Tac Toe")
+![Tic Tac Toe](sample/tictactoe_winning_pattern_2.png "Tic Tac Toe")
+![Tic Tac Toe](sample/tictactoe_winning_pattern_3.png "Tic Tac Toe")
+
+# Game Reset and New Game
+
+![Tic Tac Toe](sample/tictactoe_game_reset.png "Tic Tac Toe")
+![Tic Tac Toe](sample/tictactoe_score_clearing.png "Tic Tac Toe")
+
+---
+
 ![Tic Tac Toe](tic-tac-toe.jpg "Tic Tac Toe")
 
 Build a classic Tic Tac Toe game with the following stack:

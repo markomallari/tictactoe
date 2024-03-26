@@ -37,7 +37,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
       break;
   }
 
-  const boxStyle = `flex justify-center items-center bg-white border-black cursor-pointer leading-5 text-[5.25rem] md:leading-10 md:text-[9.25rem] font-cursive aspect-square hover:bg-slate-50`;
+  const boxStyle = `flex justify-center items-center bg-white border-black cursor-pointer leading-10 text-[9.25rem] font-cursive aspect-square hover:bg-slate-50`;
 
   return (
     <div className="grid grid-cols-3">
@@ -51,7 +51,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
                     ? "box-item-player-1"
                     : "box-item-player-2"
                   : ""
-              } border-r-4 border-b-4`}
+              } typography border-r-4 border-b-4`}
               key={v.boxId}
               onClick={() => {
                 selectByPlayer(player, v.boxId);
@@ -71,7 +71,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
                     ? "box-item-player-1"
                     : "box-item-player-2"
                   : ""
-              } border-b-4`}
+              } typography border-b-4`}
               key={v.boxId}
               onClick={() => {
                 selectByPlayer(player, v.boxId);
@@ -90,7 +90,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
                     ? "box-item-player-1"
                     : "box-item-player-2"
                   : ""
-              } border-r-4 border-b-4`}
+              } typography border-r-4 border-b-4`}
               key={v.boxId}
               onClick={() => {
                 selectByPlayer(player, v.boxId);
@@ -109,7 +109,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
                     ? "box-item-player-1"
                     : "box-item-player-2"
                   : ""
-              } border-r-4`}
+              } typography border-r-4`}
               key={v.boxId}
               onClick={() => {
                 selectByPlayer(player, v.boxId);
@@ -128,7 +128,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
                     ? "box-item-player-1"
                     : "box-item-player-2"
                   : ""
-              }`}
+              } typography`}
               key={v.boxId}
               onClick={() => {
                 selectByPlayer(player, v.boxId);

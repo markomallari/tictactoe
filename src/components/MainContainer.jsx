@@ -118,10 +118,24 @@ const MainContainer = () => {
   return (
     <>
       <ToastContainer autoClose={1000} hideProgressBar={true} />
-      <div className="@container container fixed m-auto min-w-[380px]">
+      <div className="@container container absolute m-auto min-w-[380px]">
         <div className="flex flex-col items-center justify-center">
-          <div className="grid grid-cols-3 w-full md:w-[620px] my-2">
-            <div className="flex flex-col bg-white shadow-lg p-2">
+          <div className="flex text-center align-middle justify-center items-center">
+            <div className="font-semibold text-2xl text-violet-700  my-4">
+              {" "}
+              Tictactoe NCS{" "}
+            </div>
+          </div>
+          <div className="justify-center items-center w-full md:w-[470px] shadow-2xl">
+            <BoxList
+              boxList={boxSelection}
+              onPlayerSelect={onPlayerSelect}
+              player={player}
+              pattern={pattern}
+            />
+          </div>
+          <div className="grid grid-cols-3 w-full md:w-[470px] my-2">
+            <div className="flex flex-col bg-white shadow-lg p-2 w-full col-span-2">
               <div className="font-bold">Scoreboard: </div>
               <div className="">
                 <button
@@ -146,13 +160,7 @@ const MainContainer = () => {
                 {scores.draw > 1 ? "points" : scores.draw === 1 ? "point" : ""}
               </div>
             </div>
-            <div className="flex text-center align-middle justify-center items-center">
-              <div className="font-semibold text-2xl text-violet-700">
-                {" "}
-                Tictactoe NCS{" "}
-              </div>
-            </div>
-            <div className="flex text-center items-center align-middle justify-center">
+            <div className="flex text-center justify-center">
               <div>
                 {settledGame ? (
                   <button
@@ -176,14 +184,6 @@ const MainContainer = () => {
                 )}
               </div>
             </div>
-          </div>
-          <div className="justify-center items-center w-full md:w-[620px] bg-white shadow-2xl p-8">
-            <BoxList
-              boxList={boxSelection}
-              onPlayerSelect={onPlayerSelect}
-              player={player}
-              pattern={pattern}
-            />
           </div>
         </div>
       </div>
