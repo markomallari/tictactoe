@@ -33,6 +33,17 @@ body {
   font-size: 9.25rem;
 }
 
+.overlay {
+  z-index: 9;
+  margin: 30px;
+  background: #009938;
+}
+
+.loader {
+  left: 47%;
+  top: 39%;
+}
+
 .row-1-line {
   width: 270%;
   height: 0.25rem;
@@ -101,6 +112,11 @@ body {
     line-height: 2.5rem;
     font-size: 10.25rem;
   }
+
+  .loader {
+    left: 46%;
+    top: 39%;
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -113,6 +129,11 @@ body {
     line-height: 2.5rem;
     font-size: 9rem;
   }
+
+  .loader {
+    left: 45%;
+    top: 39%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -124,5 +145,10 @@ body {
   .typography {
     line-height: 2rem;
     font-size: 7.5rem;
+  }
+
+  .loader {
+    left: 42%;
+    top: 36%;
   }
 }

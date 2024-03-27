@@ -18,6 +18,7 @@ const MainContainer = () => {
   const [player, setPlayer] = useState("X");
   const [boxSelection, setBoxSelection] = useState(boxlist);
   const [settledGame, setSettledGame] = useState(false);
+  const [loader, setLoader] = useState(false);
   const [pattern, setPattern] = useState(null);
 
   const winningPatterns = [
@@ -35,6 +36,9 @@ const MainContainer = () => {
 
   //on player choose box
   const onPlayerSelect = (p, id) => {
+    let draw = true;
+    let win = false;
+
     if (settledGame) {
       return;
     }
@@ -57,9 +61,9 @@ const MainContainer = () => {
     //update store
     dispatch(updateBoxList(newBoxList));
 
-    let draw = true;
     //check winning pattern
-    winningPatterns.map((v, i) => {
+    winningPatterns.forEach((v, i) => {
+      if (win) return;
       if (
         (newBoxList[v.s0].player === "X" &&
           newBoxList[v.s1].player === "X" &&
@@ -77,6 +81,7 @@ const MainContainer = () => {
         } else {
           dispatch(addScoreY());
         }
+        win = true;
       }
     });
 
@@ -106,13 +111,22 @@ const MainContainer = () => {
 
   //on game resets
   const onGameReset = () => {
+    //for animation loader
+    setLoader(true);
+
     let newBoxList = [...boxSelection];
     newBoxList = newBoxList.map((v) => ({ ...v, player: "" }));
     setBoxSelection(newBoxList);
     setPlayer("X");
     setPattern(null);
+
     //reset to initial store
     dispatch(resetBoxList());
+
+    //animation
+    setTimeout(() => {
+      setLoader(false);
+    }, 200);
   };
 
   return (
@@ -132,6 +146,7 @@ const MainContainer = () => {
               onPlayerSelect={onPlayerSelect}
               player={player}
               pattern={pattern}
+              loader={loader}
             />
           </div>
           <div className="grid grid-cols-3 w-full md:w-[470px] my-2">
@@ -148,11 +163,11 @@ const MainContainer = () => {
                 </button>
               </div>
               <div className="font-medium">
-                X: {scores?.x}{" "}
+                Player X: {scores?.x}{" "}
                 {scores.x > 1 ? "points" : scores.x === 1 ? "point" : ""}
               </div>
               <div className="font-medium">
-                Y: {scores?.o}{" "}
+                Player O: {scores?.o}{" "}
                 {scores.o > 1 ? "points" : scores.o === 1 ? "point" : ""}
               </div>
               <div className="font-medium">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BoxItem from "./BoxItem";
 
-const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
+const BoxList = ({ boxList, onPlayerSelect, player, pattern, loader }) => {
   const selectByPlayer = (p, id) => {
     onPlayerSelect(p, id);
   };
@@ -40,7 +40,7 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
   const boxStyle = `flex justify-center items-center bg-white border-black cursor-pointer leading-10 text-[9.25rem] font-cursive aspect-square hover:bg-slate-50`;
 
   return (
-    <div className="grid grid-cols-3">
+    <div className={`${loader ? "opacity-50" : ""} grid grid-cols-3`}>
       {boxList?.map((v) => {
         if (v.boxId == 1 || v.boxId == 2) {
           return (
@@ -144,6 +144,12 @@ const BoxList = ({ boxList, onPlayerSelect, player, pattern }) => {
           );
         }
       })}
+
+      {loader ? (
+        <div className="loader w-16 h-16 border-8 border-dashed rounded-full animate-spin border-gray-600 absolute"></div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
