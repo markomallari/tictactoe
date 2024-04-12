@@ -1,44 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const dynamicBoxes = Array.from(Array(9), (x, i) => ({
+  boxId: i + 1,
+  player: "",
+}));
+
 const initialState = {
-  boxList: [
-    {
-      boxId: 1,
-      player: "",
-    },
-    {
-      boxId: 2,
-      player: "",
-    },
-    {
-      boxId: 3,
-      player: "",
-    },
-    {
-      boxId: 4,
-      player: "",
-    },
-    {
-      boxId: 5,
-      player: "",
-    },
-    {
-      boxId: 6,
-      player: "",
-    },
-    {
-      boxId: 7,
-      player: "",
-    },
-    {
-      boxId: 8,
-      player: "",
-    },
-    {
-      boxId: 9,
-      player: "",
-    },
-  ],
+  boxList: dynamicBoxes,
   score: {
     x: 0,
     o: 0,

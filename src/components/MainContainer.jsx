@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BoxList from "./BoxList";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -36,14 +36,13 @@ const MainContainer = () => {
 
   //on player choose box
   const onPlayerSelect = (p, id) => {
-    let draw = true;
     let win = false;
 
     if (settledGame) {
       return;
     }
-    let newBoxList = [...boxlist];
-    newBoxList = newBoxList.map((v) => {
+
+    const newBoxList = boxlist.map((v) => {
       if (v.boxId === id && v.player === "") {
         //changing of player turns
         if (player === "X") {
@@ -51,13 +50,16 @@ const MainContainer = () => {
         } else {
           setPlayer("X");
         }
+        //updating state player
         return { ...v, player: p };
       } else {
         return v;
       }
     });
 
+    //set active boxes
     setBoxSelection(newBoxList);
+
     //update store
     dispatch(updateBoxList(newBoxList));
 
@@ -74,7 +76,6 @@ const MainContainer = () => {
       ) {
         setPattern(i);
         setSettledGame(true);
-        draw = false;
         toast.success(`Player ${player} Wins!`);
         if (player === "X") {
           dispatch(addScoreX());
@@ -85,13 +86,12 @@ const MainContainer = () => {
       }
     });
 
-    if (draw) {
-      const draw = newBoxList.every((v) => v.player !== "");
-      if (draw) {
-        toast.success(`Game Draw!`);
-        dispatch(addScoreDraw());
-        setSettledGame(true);
-      }
+    //check if all slot is clicked
+    const allItemsSelected = newBoxList.every((v) => v.player !== "");
+    if (allItemsSelected && !win) {
+      toast.success(`Game Draw!`);
+      dispatch(addScoreDraw());
+      setSettledGame(true);
     }
   };
 
