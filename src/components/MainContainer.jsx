@@ -137,7 +137,7 @@ const MainContainer = () => {
           <div className="flex text-center align-middle justify-center items-center">
             <div className="font-semibold text-2xl text-violet-700  my-4">
               {" "}
-              Tictactoe NCS{" "}
+              Tictactoe
             </div>
           </div>
           <div className="justify-center items-center w-full md:w-[470px] shadow-2xl">
